@@ -1,0 +1,8 @@
+# Created by .ignore support plugin (hsz.mobi)
+
+# ignore IDEA stuff
+.idea
+
+# ignore Vim stuff
+.*~
+.*.swp
