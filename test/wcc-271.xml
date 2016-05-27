@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mods xmlns="http://www.loc.gov/mods/v3" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.2" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-2.xsd">
+  <titleInfo>
+    <title>Summit of Pine Mt. Chilhowee Range Blount Co. Tenn.</title>
+  </titleInfo>
+  <name>
+    <namePart>Cochran, William Cox 1848-1936</namePart>
+    <role>
+      <roleTerm type="text">creator</roleTerm>
+    </role>
+  </name>
+  <name>
+    <namePart>Mary Rudd Cochran</namePart>
+  </name>
+  <typeOfResource>still image</typeOfResource>
+  <genre authority="dct">image</genre>
+  <subject>
+    <topic>Chilhowee Range</topic>
+  </subject>
+  <subject>
+    <topic>Pine Mountain</topic>
+  </subject>
+  <note>Document ID: wcc007</note>
+  <originInfo>
+    <publisher>Great Smoky Mountains Regional Project, The University of Tennessee Libraries, Knoxville Tennessee</publisher>
+  </originInfo>
+  <originInfo>
+    <dateOther>1886-08-12</dateOther>
+  </originInfo>
+  <physicalDescription>
+    <note>Image/jpeg</note>
+  </physicalDescription>
+  <identifier type="local">wcc007</identifier>
+  <relatedItem type="original">
+    <titleInfo>
+      <title>MS 552;  William Cox Cochran Great Smoky Mountains Photographic Collection, 1886;  Special Collections Library, The University of Tennessee</title>
+    </titleInfo>
+  </relatedItem>
+  <relatedItem>
+    <titleInfo>
+      <title>William Cox Cochran Photographic Collection</title>
+    </titleInfo>
+  </relatedItem>
+  <accessCondition>Public domain.</accessCondition>
+</mods>
