@@ -9,6 +9,7 @@
     localizations   2016-05 bridger
                     Dropped srw_dc namespace references
                     Dropped mods:modsCollection test
+                    Added mods:dateOther[not(@*)]
 
 
     Version 1.8		2015-03-05 tmee@loc.gov
