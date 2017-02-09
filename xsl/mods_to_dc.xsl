@@ -5,7 +5,12 @@
 	xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
-	<!-- 
+	<!--
+		localizations   2017-02 bridger
+		                Modified mods:name processing for '[Aa]uthor's
+		                Modified the 'name' template to properly apply parens
+		                Modified the 'name' template to handle Committee members
+
     localizations   2016-05 bridger
                     Dropped srw_dc namespace references
                     Dropped mods:modsCollection test
@@ -104,16 +109,20 @@
 	<xsl:template match="mods:name">
 		<xsl:choose>
 			<xsl:when
-				test="mods:role/mods:roleTerm[@type = 'text'] = 'creator' or mods:role/mods:roleTerm[@type = 'code'] = 'cre'">
+				test="(mods:role/mods:roleTerm[@type = 'text'] = 'creator')
+				      or (mods:role/mods:roleTerm[@type = 'code'] = 'cre')
+              or (mods:role/mods:roleTerm[@type = 'text'] = 'Author')
+              or (mods:role/mods:roleTerm[@type = 'text'] = 'author')">
 				<dc:creator>
 					<xsl:call-template name="name"/>
 					<xsl:choose>
 						<xsl:when test="mods:etal">
 							<xsl:value-of select="."/>
 						</xsl:when>
-						<xsl:otherwise>
+						<!-- commenting this for now, not sure why we'd need a default 'et al' -->
+            <!--<xsl:otherwise>
 							<xsl:text>et al</xsl:text>
-						</xsl:otherwise>
+						</xsl:otherwise>-->
 					</xsl:choose>
 				</dc:creator>
 			</xsl:when>
@@ -413,11 +422,9 @@
 				<xsl:text/>
 			</xsl:if>
 			<xsl:if test="mods:displayForm">
-				<xsl:text> (</xsl:text>
 				<xsl:value-of select="mods:displayForm"/>
-				<xsl:text>) </xsl:text>
 			</xsl:if>
-			<xsl:for-each select="mods:role[mods:roleTerm[@type = 'text'] != 'creator']">
+			<xsl:for-each select="mods:role[(mods:roleTerm[@type = 'text'] != 'creator') or (mods:roleTerm[@authority = 'marcrelator'] = 'Committee member')]">
 				<xsl:text> (</xsl:text>
 				<xsl:value-of select="normalize-space(child::*)"/>
 				<xsl:text>) </xsl:text>
